@@ -55,7 +55,9 @@ setwd('../')
     
     
     fileUrl <- "https://www.stats.govt.nz/assets/Uploads/Annual-enterprise-survey/Annual-enterprise-survey-2020-financial-year-provisional/Download-data/annual-enterprise-survey-2020-financial-year-provisional-csv.csv"
-    download.file(fileUrl, destfile = './data',method = "curl")
+    download.file(fileUrl, destfile = './data.csv',method = "curl")
+    
+    # the destfile is the name of the file that is saving 
 
     
     dateDownload <- date()
@@ -213,6 +215,7 @@ setwd('../')
         
         
         
+
         
         
         
