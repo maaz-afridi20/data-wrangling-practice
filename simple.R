@@ -117,27 +117,110 @@ setwd('../')
         #for fread() there are many attributes that we can Use
         
     
+    # -----------------------------------------------
+        
+        # Reading Data From excel Files : 
+        
+        
+    # so for reading data from excel files we can use 
+        # read.xlsx() and in this we will put the name of the excel file
+        # as we know that in excel there are lot excel sheets so we can 
+        # here specif that from which sheet read the data like
+        
+        # first we have to import library 
+        
+        library(xlsx)
+        
+        cameraData <- read.xlsx('excelprac.xlsx', sheetIndex = 1, header = T )
+        View(head(cameraData))    
+        
+        # so now this will read data from excel file which is present in
+        # the data folder and its name is excelprac and just like csv we 
+        # must have to give the extention which is xlsx
     
-    
-    
-    
-    
+        str(cameraData)
+        dim(cameraData)
+        ncol(cameraData)        
+        nrow(cameraData)
+        
+        # so if we some specific rows and columns then we can also 
+        # specify that i-e we need data from that rows and columnd 
+        # like 
+        
+        
+        colIndexx <- 1:4 # here the variable name may be anything
+        rowIndexx <- 1:10
+        
+        cameraData <- read.xlsx('excelprac.xlsx', sheetIndex = 1,
+                                colIndex = colIndexx, rowIndex = rowIndexx)
 
+        View(cameraData)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        # so now this will print data with 4 columns and 10 rows
+        # of excelprac excel sheet 
+        
+    # ------------------------------------------
+        
+        # Second Method to read data from excel file :
+        
+        library(readxl)
+        
+        readxl_example() # this will show the example file for 
+        # readxl library this will give the name of the excel files
+        # that we can use as an example 
+        
+        
+        filee <- read_excel('excelprac.xlsx')
+        
+        View(filee)
+        View(head(filee))
+        
+        # All other functionalities are same but just the 
+        # writing method are diff 
+        
+    # -----------------------------------------------------
+        
+        
+        # WRITEXL : 
+        
+        # if we download data file in some other format like csv and 
+        # we want to change it in excel format then we can use this 
+        # library above of those libraries does not include that write 
+        # function so the write function convert the csv files into The
+        # excel file 
+        
+        
+        # if we want to download some library from github then we can use
+        # this command below and then specify the name 
+        
+        
+        devtools::install_github("ropensci/writexl")
+        #so now we have to import library 
+        
+        library(writexl)
+        
+        # so in this library we have write_xlsx() in which we will give 
+        # the name of the file and then give the file formate that it will
+        # change to that format like 
+        
+        sample <- read.csv('sample4.csv')
+        View(sample)
+        
+        library(writexl)
+        write_xlsx(sample, 'sample4.xlsx')
+        
+        # so this will change the sample.csv to xlsx
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
