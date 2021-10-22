@@ -210,8 +210,24 @@ setwd('../')
         
         library(writexl)
         write_xlsx(sample, 'sample4.xlsx')
-        
         # so this will change the sample.csv to xlsx
+        
+        
+        library(writexl)
+        
+        sample10k <- read.csv('sample10k.csv')
+        
+        
+    
+        write.xlsx(sample10k, 'sapmple10k.xlsx')
+        # this will change the csv file to excel file i-e xlsx
+        
+        list.files()
+        samplee <- read.xlsx('sapmple10k.xlsx',sheetIndex = 1, colIndex = 1:3,
+                             rowIndex = 1:16)
+        View(samplee)
+        
+        # this will show values of column from 1 to 3 and rows from 1 to 15
         
         
         
