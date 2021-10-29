@@ -95,6 +95,31 @@
     
     
     
+    paths_allowed(
+        pathh <- c("https://www.imdb.com/search/title/?year=2021&title_type=feature&")
+    )
+    
+    page <- read_html('https://www.imdb.com/search/title/?year=2021&title_type=feature&')
+    name <- page %>% html_nodes('.lister-item-header a') %>% html_text2()
+    name
+    
+    # so now this will fetch the data and then save it in name variable
+    
+    year <- page %>% html_nodes('.lister-item-header a , .text-muted.unbold') %>% html_text2()
+    year
+    
+    
+    ratings <- page %>% html_nodes('.ratings-imdb-rating strong') %>% html_text2()
+    ratings
+    
+    # this will print all the seletc movies ratings 
+    
+    
+    directors <- page %>% html_nodes('.lister-item-content a:nth-child(1)') %>% html_text2()
+    directors
+    
+    #just use the selector gadjet of google chrome 
+    
     
     
     
