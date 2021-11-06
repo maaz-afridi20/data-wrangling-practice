@@ -71,13 +71,19 @@
     # that table in cony db
     
     
-    dbReadTable(cony, 'cars_data')
+    rdd <- dbReadTable(cony, 'cars_data')
     # will read table of data base quickly 
     
     
     
     
+    data('AirPassengers')
     
+    # Creating Another database : 
+    
+    airpass <- dbConnect(RSQLite::SQLite(), "Airpassenger.db")
+    
+
     
     
     
